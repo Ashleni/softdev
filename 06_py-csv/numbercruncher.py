@@ -32,7 +32,7 @@ def make_dict(filename):
 def get_rand_weighted_krewe(nums):
     if(len(nums) == 0):
         return ["empty dict"]
-    key = random.choices(list(nums.keys()), weights=list(nums.values()), k=1)
+    key = random.choices(list(nums.keys())[1:-1], weights=list(nums.values())[1:-1], k=1)
     return key
 
 
