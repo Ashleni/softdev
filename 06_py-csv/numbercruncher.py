@@ -1,4 +1,20 @@
+'''
+Team We: Aahan Mehta, Shreya Roy
+SoftDev
+K06 -- numbercruncher
+2022-09-29
+time spent: .9
+DISCO:
+- random.choices() can be used to weight choices 
+- 
+- 
+QCC:
 
+OPS SUMMARY:
+
+
+
+'''
 
 import random
 
@@ -9,7 +25,7 @@ def make_dict(filename):
     file = open(filename)
     file_str = file.read()[21:]
     file.close()
-    #DONT NEED / file_str = file_str.replace("\n","") #deals with newlines from texeditor
+    #file_str = file_str.replace("\n","") #deals with newlines from texeditor
     #print(file_str)
     devo_info_str = file_str.split("\n") #gives unformatted str of each devo
     #print(devo_info_str)
