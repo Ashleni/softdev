@@ -14,13 +14,16 @@ app = Flask(__name__) # Q0: Where have you seen similar syntax in other langs?
 @app.route("/") # Q1: What points of reference do you have for meaning of '/'?
 def hello_world():
     print(__name__) # Q2: Where will this print to? Q3: What will it print?
-    return "No hablo queso!"  # Q4: Will this appear anywhere? How u know?
+    words = "<h1><b>We are BWANG!</b></h1>" + '\n' + "i love computer science. i breathe and eat it"
+    return words  # Q4: Will this appear anywhere? How u know?
 
 app.run()  # Q5: Where have you seen similar constructs in other languages?
 
 
 '''
 DISCO:
+$pip install flask
+installs flask on your home computer
 QCC:
 0. Similar syntax seen from Java constructors.
 1. / usually indicates a directory, as it's the divider for different directories.
