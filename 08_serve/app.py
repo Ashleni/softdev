@@ -59,7 +59,7 @@ dictionary = {}
 populate(dictionary)
 #print(dictionary)
 redef_percent(dictionary)
-
+link = "https://www.youtube.com/watch?v=grd-K33tOSM"
 
 
 #--------------------------
@@ -70,8 +70,36 @@ app = Flask(__name__) #create instance of class Flask
 def hello_world():
     print("the __name__ of this module is... ")
     print(__name__)
-    return '<a href = "https://www.youtube.com/watch?v=grd-K33tOSM">' + choose(dictionary) + "</a>" + "<br><br> - brought to you by BWANG"
+    return '<a href = ' + link + '>' + choose(dictionary) + "</a>" + "<br><br> - brought to you by BWANG"
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change
     app.run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
