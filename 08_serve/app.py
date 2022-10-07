@@ -6,7 +6,12 @@ K08 -- serve
 2022-10-07
 Time spent: 
 DISCO:
+- rediscovered hyperlinks and formatting in HTML
+- combining our numbercruncher.py output onto flask app
+- BWANG
+- 
 QCC:
+- 
 OPS SUMMARY:
 
 
