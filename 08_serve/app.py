@@ -4,16 +4,17 @@ Soft Dev
 Period 8
 K08 -- serve
 2022-10-07
-Time spent: 
+Time spent:
 DISCO:
 - rediscovered hyperlinks and formatting in HTML
 - combining our numbercruncher.py output onto flask app
 - BWANG
-- 
 QCC:
-- 
+- How would you effectively hide code from a viewer
 OPS SUMMARY:
-
+- same dictionary stuff from before
+- import csv
+- refrence a link
 
 '''
 
@@ -24,7 +25,7 @@ OPS SUMMARY:
 from flask import Flask
 import csv
 import random
-    
+
 #Randomly choose a student name out of all periods
 def choose(dic):
     dic_tmp = dic.copy()
@@ -33,7 +34,7 @@ def choose(dic):
     for job in dic_tmp:
         if rand < dic_tmp.get(job):
             return job
-    
+
 
 
 #Method to rewrite percentages as cumulative instead of independant
@@ -42,24 +43,37 @@ def redef_percent(dic):
     for job in dic:
         run_sum = float(dic.get(job)) + run_sum
         dic.update({job:run_sum})
-        
+
 
 def populate(dic):
     #shamelessly stolen from geeksforgeeks (as help!)
     with open("occupations.csv", "r") as f:
         file = csv.reader(f)
-                   
+
         #iterate through all the blocks of info
         for row in file:
             dic[row[0]] = row[1]
     dic.pop("Job Class")
-    
 
+#Choose the appropriate reference file
+def choose_ref():
+    refs = []
+    with open("reference.csv", "r") as f:
+        file = csv.reader(f)
+
+        #iterate through all the blocks of info
+        for row in file:
+            refs.append(row[0])
+    #our references are subpar
+    #print(refs)
+    return random.choice(refs)
+
+#print(choose_ref())
 dictionary = {}
 populate(dictionary)
 #print(dictionary)
 redef_percent(dictionary)
-link = "https://www.youtube.com/watch?v=grd-K33tOSM"
+
 
 
 #--------------------------
@@ -70,36 +84,9 @@ app = Flask(__name__) #create instance of class Flask
 def hello_world():
     print("the __name__ of this module is... ")
     print(__name__)
-    return '<a href = ' + link + '>' + choose(dictionary) + "</a>" + "<br><br> - brought to you by BWANG"
+    link = choose_ref()
+    return '<a href = ' + link + '>' + choose(dictionary) + "</a>" + "<br><br> - brought to you by BWANG <br>and nothing more<br><br><img src=\"https://i.ytimg.com/vi/ACGRshAYMt8/hqdefault.jpg\" alt = \"why bother\">"
 
 if __name__ == "__main__":  # true if this file NOT imported
     app.debug = True        # enable auto-reload upon code change
     app.run()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

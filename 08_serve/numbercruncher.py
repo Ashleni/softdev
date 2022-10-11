@@ -1,5 +1,5 @@
 '''
-Brian Wang, Jeffery Tang
+Brian Wang, Shreya Roy, April Li
 SoftDev
 K06 -- Thinking about jobs
 2022-09-29
