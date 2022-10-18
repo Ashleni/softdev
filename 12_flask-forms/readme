@@ -1,0 +1,16 @@
+TNPG: Ballers; Jian Hong Li, Harry Zhu, Shreya Roy
+SoftDev
+K12
+2022-10-17
+Time Spent: 2hrs
+
+QCC:
+* How do you store data in servers?
+* How do you access or change GET and POST?
+* Going to be honest here: we looked at other team's solution
+but still don't understand what's going on
+
+
+Disco:
+* Returning request_method can give you the method
+* render_template("file.html") can be used to open the file in the browser
