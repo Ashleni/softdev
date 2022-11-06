@@ -4,15 +4,20 @@
 <html>
 
   <head>
-    <title>Reponse</title>
+    <title>Response</title>
   </head>
 
   <body>
     <h1>
-      Hello, {{username}}!
+      Hello, {{username}}! You entered this password: {{password}}! 
     <h1>
     <h2>
-      {{request_method}}
+      You used {{request_method}}<br> Hi {{username}}.. there's nothing else. You should probably log out now :)
+	  
     <h2>
+	<form> 
+	  <button type="submit" formaction="http://127.0.0.1:5000/logout" method="GET">Logout!</button>
+	</form>
+	
   <body>
 </html>
