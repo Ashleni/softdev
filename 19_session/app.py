@@ -2,7 +2,7 @@
 # SoftDev pd8
 # K19: session
 # 2022-11-7
-# time spent: 1.5 hours
+# time spent: 2.5 hours
 
 from flask import Flask             #facilitate flask webserving
 from flask import render_template   #facilitate jinja templating
