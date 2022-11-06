@@ -1,0 +1,12 @@
+Ballers:: Shreya Roy, Jian Hong Li, Harry Zhu
+Softdev pd 8
+K18 csv to database
+2022-10-26
+time spent .7hrs
+
+QCC:
+- how to delete a table in a db 
+DISCO:
+- DictReader is far easier to use
+- Entire rows of a csv file can be read thru in a loop
+- keeping track of quotations is hard..
