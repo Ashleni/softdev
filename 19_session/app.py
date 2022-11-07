@@ -17,6 +17,8 @@ app = Flask(__name__)    #create Flask object
 app.secret_key= os.urandom(32) #create random secret key
 #print(app.secret_key)
 
+correctuser = "user"
+correctpw = "correct!"
 
 @app.route("/", methods=['GET']) #, methods=['GET', 'POST'])
 def disp_loginpage():
@@ -28,11 +30,16 @@ def disp_loginpage():
     
 @app.route("/auth", methods=['POST'])
 def authenticate():
-    if request.method == 'POST':
-        session['username']= request.form['username']   #remember user in session
-        session['password'] = request.form['password']  #remember user in session
-        return render_template('response.html', username = request.form['username'], password = request.form['password'], request_method = 'POST') #response to a form submission
-    return "Waaa hooo HAAAH wowie howd u get here"  
+    try:
+        if request.method == 'POST':
+            session['username']= request.form['username']   #remember user in session
+            session['password'] = request.form['password']  #remember user in session
+            if(correctuser == request.form['username'] and correctpw == request.form['password']):
+                return render_template('response.html', username = request.form['username'], password = request.form['password'], request_method = 'POST') #response to a form submission
+            else:
+                return render_template('login.html', exception =  "Try again") 
+    except:
+        return render_template('login.html', exception = "Try again")  
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
@@ -40,8 +47,7 @@ def logout():
         if session != {}:           #if no remembered user, just send to login page
             session.pop('username') #un-remember username
             session.pop('password') #un-remember password
-        return render_template('login.html') 
-    return "Waaa hooo HAAAH wowie howd u get here" 
+        return render_template('login.html')
 
 
 
