@@ -13,10 +13,10 @@ def home():
     #print(key.readline())
     link = 'https://api.nasa.gov/planetary/apod?api_key=' + key.readline()
     print(link)
-    r = requests.get(link[:-1])
-    dict = r.json()
-    url = dict['url']
-    explain = dict['explanation']
+    r = requests.get(link[:-1]) #new line at end of key file
+    dict = r.json() 
+    url = dict['url'] #url for image
+    explain = dict['explanation'] #blurb for image
     return render_template("main.html", url = url, explain = explain)
     
 
