@@ -1,27 +1,7 @@
-/*
-   your PPTASK:
-   
-   Test drive each bit of code in this file,
-    and insert comments galore, indicating anything
-     you discover,
-    	have questions about,
-    		or otherwise deem notable.
-    		
-    		Write with your future self or teammates in mind.
-    		
-    		If you find yourself falling out of flow mode, consult 
-    		other teams
-    		MDN
-
-   A few comments have been pre-filled for you...
-   
-   (delete this block comment once you are done)
-*/
-
-// Team TrailBlazers
-// SoftDev pd0
+// Team TrailBlazers :: Shreya Roy, Jeffrey
+// SoftDev pd2
 // K28 -- Getting more comfortable with the dev console and the DOM
-// 2023-04-05w
+// 2023-04-19
 // --------------------------------------------------
 
 
@@ -58,9 +38,9 @@ var addItem = function(text) {
   newitem.innerHTML = text;
   list.appendChild(newitem);
 };
-//no return statement returns undefined
+	//no return statement returns undefined in console
 
-
+	// index n is removed starting from zero (despite browser starting from 1)
 var removeItem = function(n) {
   var listitems = document.getElementsByTagName('li');
   listitems[n].remove();
@@ -85,20 +65,20 @@ var stripe = function() {
     }
   }
 };
-//cant "reassign" colors 
+	//cant "reassign" colors if element already has a color class on it
 
 //insert your implementations here for...
 //FAC
-function fact(n) {
+var fac = function(n) {
 	if (n < 2) 
         return 1;
       else {
-          return (n * fact(n - 1));
+          return (n * fac(n - 1));
       }
 }
 
 //FIB
-function fib(n){
+var fib = function(n){
 
   if (n <= 1){
 	  return n
@@ -107,6 +87,14 @@ function fib(n){
 }
 
 // GCD
+var gcd = function(n0,n1){
+	while(!(n0 % n1 == 0)){
+		var f = n0 % n1;
+		n0 = n1;
+		n1 = f;
+	}		
+	return n1;
+}
 
 // In addition to the style shown above,
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
@@ -116,4 +104,14 @@ const myFxn = (param1, param2) => {
   return retVal;
 };
 
+	// arrow syntax does not use function keyword but seems to act the same as a variable assigned to a function
+	// calling the variable myFxn instead of the function myFxn() returns the contents of the function
+	// Q: Const vs var ?
 
+const testAll = () => {
+	return "6th Fib: " + fib(6) + ". 6!: " + fac(6) + ". GCD of 24 and 18: " + gcd(24,18)
+	
+};
+
+
+addItem(testAll())
