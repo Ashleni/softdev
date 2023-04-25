@@ -10,7 +10,8 @@
 console.log("AYO");
 
 var i = "hello";
-var j = 20;
+const j = 20;
+
 
 
 //assign an anonymous fxn to a var
@@ -100,8 +101,7 @@ var gcd = function(n0,n1){
 //  you are encouraged to test drive the "arrow function syntax" as shown below.
 //  Note anything notable.
 const myFxn = (param1, param2) => {
-  retVal = param1+param2;
-  return retVal;
+  return param1+param2;
 };
 
 	// arrow syntax does not use function keyword but seems to act the same as a variable assigned to a function
@@ -115,3 +115,22 @@ const testAll = () => {
 
 
 addItem(testAll())
+
+var button = document.getElementById("fib"); 
+button.addEventListener('click', ()=>{
+	document.getElementById("fibR").innerHTML = fib(15)
+}
+);
+
+var button = document.getElementById("fac"); 
+button.addEventListener('click', ()=>{
+	document.getElementById("facR").innerHTML = fac(6)
+}
+);
+
+var button = document.getElementById("gcd"); 
+button.addEventListener('click', ()=>{
+	document.getElementById("gcdR").innerHTML = gcd(24, 18)
+}
+);
+
