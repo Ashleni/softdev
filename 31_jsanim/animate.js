@@ -4,7 +4,7 @@ var stopButton = document.getElementById("buttonStop");// GET STOP BUTTON
 
 var ctx = c.getContext("2d"); // YOUR CODE HERE
 
-ctx.fillStyle = "blue"// YOUR CODE HERE
+ctx.fillStyle = "turquoise"// YOUR CODE HERE
 
 var requestID;  // int global var for use with animation frames
 
@@ -24,10 +24,10 @@ var drawDot = () => {
   ctx.fill();
   ctx.stroke();
   
-  if (radius > 250 && growing){
+  if (radius > c.width/2 && growing){
 	  growing = false;
   }
-  else if (radius-1 < 0 && !growing) {
+  else if (radius-1 <= 0 && !growing) {
 	  growing = true;
   }
   
