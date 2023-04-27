@@ -1,0 +1,10 @@
+JS Bubble and Squeak
+
+Order of the bubbles depends on the structure of the DOM.
+For addEventListener, when the boolean is true, the bubbles are performed from 
+the outermost "bubble" in the DOM, which in our .html file is <table>, then <tr>, then <td>
+But when this boolean value is false, the bubbles are in reverse order from <td>, <tr>, then <table>.
+
+e.stopPropagation() prevents bubbling further after the first event is performed.
+
+squeak is ............................. ? 
