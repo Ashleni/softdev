@@ -12,7 +12,7 @@ var requestID; // init global var for use with animation frames
 
 var clear = (e) => {
 	//e.preventDefault();
-    ctx.clearRect(0, 0, c.width, c.height)
+    ctx.clearRect(0, 0, c.width, c.height);
 };
 
 var radius = 0;
@@ -43,7 +43,7 @@ var drawDot = () => {
 
 //var stopIt = function() {
 var stopIt = () => {
-    console.log("stopIt invoked...")
+    console.log("stopIt invoked...");
     console.log(requestID);
 
     /* Your code here 
