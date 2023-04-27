@@ -1,0 +1,1 @@
+e.preventDefault() seems to make the circle not be drawn in.(seems to prevent js events from happening)
